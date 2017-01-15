@@ -1,0 +1,28 @@
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+.container{
+	max-width: 986px;
+  	margin: 20px; 
+}
+
+.iconHeader{
+	border:1px solid black;
+}
+
+.shoppingCart{
+  
+}
+
+.product {
+  display: inline-block;
+}
+
+.productImage {
+  width: 200px;
+  display: block;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+}
