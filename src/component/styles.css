@@ -16,13 +16,23 @@
 	width: 100%;
 }
 
+.productsTable th{
+	text-align: left;
+}
+
 .product {
   display: inline-block;
+  border: solid 1px #d3d3d3;
+  margin: 0 5px 0 5px; 
+  text-align: center;
+  cursor: pointer;
 }
 
 .productImage {
   width: 200px;
+  height: 150px;
   display: block;
+  padding: 5px;
 }
 
 .heading {

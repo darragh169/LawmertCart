@@ -46,9 +46,9 @@ const Cart = ({total, items}) => (
       <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
       <a className={styles.button} onClick={clear}>Clear all items</a>
       
-      <Table model={TableModel}></Table>
+      {/*<Table model={ TableModel } data={ items }></Table>*/}
 
-      <table>
+      <table className={styles.productsTable}>
         <thead>
           <tr>
             <th>Product</th>
