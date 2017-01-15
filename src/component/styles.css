@@ -12,6 +12,10 @@
 	cursor: pointer;
 }
 
+.productsTable{
+	width: 100%;
+}
+
 .product {
   display: inline-block;
 }
