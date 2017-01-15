@@ -2,15 +2,14 @@
 
 .container{
 	max-width: 986px;
-  	margin: 20px; 
+  	margin-left: 20px; 
 }
 
-.iconHeader{
-	border:1px solid black;
-}
-
-.shoppingCart{
-  
+.button{
+	border: solid 1px #d3d3d3;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .product {

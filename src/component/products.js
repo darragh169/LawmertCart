@@ -6,7 +6,7 @@ import Icon from './icon'
 
 export default () => (
   <div>
-    <Heading><Icon name="fa-coffee" size="fa-2x"></Icon>Products</Heading>
+    <Heading><Icon name="fa-coffee" size="fa-1x"></Icon>Products</Heading>
     <Product {...products.cake}/>
     <Product {...products.waffle}/>
     <Product {...products.chocolate}/>

@@ -8,6 +8,8 @@ import * as products from '../data/items';
 import Heading from './heading';
 import Icon from './Icon'
 
+import styles from './styles.css';
+
 const Item = connect(
   () => ({}),
   {setQuantity}
@@ -36,8 +38,8 @@ const Item = connect(
 
 const Cart = ({total, items}) => (
   <div>
-    <Heading><Icon name="fa-shopping-cart" size="fa-2x"></Icon>Cart</Heading>
-    <a onClick={clear}>Clear all items</a>
+    <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
+    <a className={styles.button} onClick={clear}>Clear all items</a>
     <table>
       <thead>
         <tr>
