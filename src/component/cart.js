@@ -50,28 +50,29 @@ const Cart = ({total, items, clear}) => (
       
       <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
       
-      {items.length > 0 ?
-
-      <a className={styles.button} onClick={clear}>Clear all items</a>
+      
       
       {/*<Table model={ TableModel } data={ items }></Table>*/}
 
-      <table className={styles.productsTable}>
-        <thead>
-          <tr>
-            <th width="25%">Product</th>
-            <th width="20%">Price</th>
-            <th width="20%">Quantity</th>
-            <th width="20%">Total</th>
-            <th width="15%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {map((item) => <Item key={item.id} {...item}/>, items)}
-          <tr><td colSpan={4}/><td>{ formatPrice(total) }</td></tr>
-        </tbody>
-      </table>
-
+      {items.length > 0 ?
+        <div>
+          <a className={styles.button} onClick={clear}>Clear all items</a>
+          <table className={styles.productsTable}>
+            <thead>
+              <tr>
+                <th width="25%">Product</th>
+                <th width="20%">Price</th>
+                <th width="20%">Quantity</th>
+                <th width="20%">Total</th>
+                <th width="15%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {map((item) => <Item key={item.id} {...item}/>, items)}
+              <tr><td colSpan={4}/><td>{ formatPrice(total) }</td></tr>
+            </tbody>
+          </table>
+        </div>
       : <div>
           <p>Your cart is empty</p>
         </div>
