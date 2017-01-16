@@ -3,7 +3,7 @@ import map from 'lodash/fp/map';
 import reduce from 'lodash/fp/reduce';
 import {connect} from 'react-redux';
 
-import {clear, setQuantity} from '../action/cart';
+import {clear, remove ,setQuantity} from '../action/cart';
 import * as products from '../data/items';
 import Heading from './heading';
 import Icon from './Icon';
@@ -15,8 +15,8 @@ import styles from './styles.css';
 
 const Item = connect(
   () => ({}),
-  {setQuantity}
-)(({id, quantity, setQuantity}) => {
+  {setQuantity , remove}
+)(({id, quantity, setQuantity, remove}) => {
   const {title, price} = products[id];
   const inc = () => setQuantity({id, quantity: quantity + 1});
   const dec = () => setQuantity({id, quantity: quantity - 1});
@@ -24,7 +24,7 @@ const Item = connect(
     <tr>
       <td>
         {title}
-        <Icon name="fa-trash-o" size="fa-1x"></Icon>
+        <a onClick={() => remove(id)}><Icon onClick={remove} name="fa-trash-o" size="fa-1x"></Icon></a>
       </td>
       <td>
         { formatPrice(price)}
@@ -50,11 +50,9 @@ const Cart = ({total, items, clear}) => (
       
       <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
       
-      
-      
       {/*<Table model={ TableModel } data={ items }></Table>*/}
 
-      {items.length > 0 ?
+      { items.length > 0 ?
         <div>
           <a className={styles.button} onClick={clear}>Clear all items</a>
           <table className={styles.productsTable}>
@@ -73,9 +71,10 @@ const Cart = ({total, items, clear}) => (
             </tbody>
           </table>
         </div>
-      : <div>
+      : 
+      <div>
           <p>Your cart is empty</p>
-        </div>
+      </div>
       }
 
     </div>
