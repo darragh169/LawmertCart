@@ -3,7 +3,7 @@ import map from 'lodash/fp/map';
 import reduce from 'lodash/fp/reduce';
 import {connect} from 'react-redux';
 
-import {clear, remove ,setQuantity} from '../action/cart';
+import {clear, remove , setQuantity} from '../action/cart';
 import * as products from '../data/items';
 import Heading from './heading';
 import Item from './item'
