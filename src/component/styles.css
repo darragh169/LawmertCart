@@ -1,8 +1,14 @@
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
+body{
+  font-family: 'Overpass', sans-serif;
+}
 
 .container{
 	max-width: 986px;
-  	margin-left: 20px; 
+  margin-left: 20px;
+  font-family: 'Overpass'; 
 }
 
 .button{
@@ -14,11 +20,26 @@
 
 .productsTable{
 	width: 100%;
+  font-family: 'Overpass';
+  margin: 5px 0 5px 0;
+}
+
+.productsTable td{
+  line-height: 30px;
 }
 
 .productsTable th{
 	text-align: left;
   border-bottom: 1px solid #d3d3d3;
+  font-weight: bold;
+}
+
+.productsTable i{
+  margin: 0 3px 0 3px;
+}
+
+.tableTotal{
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -39,5 +60,9 @@
 
 .heading {
   font-size: 32px;
+  font-weight: bold;
+}
+.emptyCart{
+  font-size: 24px;
   font-weight: bold;
 }

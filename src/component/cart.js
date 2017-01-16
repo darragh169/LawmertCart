@@ -30,7 +30,7 @@ const Item = connect(
       </td>
       <td>
         {quantity}
-        <a onClick={ inc }><Icon name="fa-plus"></Icon></a> <a onClick={ dec }><Icon name="fa-minus"></Icon></a>
+        <a onClick={ inc }><Icon name="fa-plus" size="fa-1x"></Icon></a> <a onClick={ dec }><Icon name="fa-minus" size="fa-1x"></Icon></a>
       </td>
       <td>
         { formatPrice(price * quantity)}
@@ -66,7 +66,7 @@ const Cart = ({total, items, clear}) => (
             </thead>
             <tbody>
               {map((item) => <Item key={item.id} {...item}/>, items)}
-              <tr><td colSpan={4}/><td>{ formatPrice(total) }</td></tr>
+              <tr><td colSpan={4}/><td className={styles.tableTotal} >{ formatPrice(total) }</td></tr>
             </tbody>
           </table>
         </div>
