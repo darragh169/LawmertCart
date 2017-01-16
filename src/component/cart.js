@@ -48,6 +48,7 @@ const TableModel = {
 const Cart = ({total, items}) => (
     <div>
       <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
+      
       <a className={styles.button} onClick={clear}>Clear all items</a>
       
       {/*<Table model={ TableModel } data={ items }></Table>*/}
@@ -63,8 +64,8 @@ const Cart = ({total, items}) => (
           </tr>
         </thead>
         <tbody>
-          {map((item) => <Item {...item}/>, items)}
-          <tr><td colSpan={4}/><td>{ formatPrice(total)}</td></tr>
+          {map((item) => <Item key={item.id} {...item}/>, items)}
+          <tr><td colSpan={4}/><td>{ formatPrice(total) }</td></tr>
         </tbody>
       </table>
     </div>
