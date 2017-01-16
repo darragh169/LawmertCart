@@ -45,10 +45,13 @@ const TableModel = {
     headers: ["Product","Price","Quantity","Total"]
 }
 
-const Cart = ({total, items}) => (
+const Cart = ({total, items, clear}) => (
     <div>
+      
       <Heading><Icon name="fa-shopping-cart" size="fa-1x"></Icon>Cart</Heading>
       
+      {items.length > 0 ?
+
       <a className={styles.button} onClick={clear}>Clear all items</a>
       
       {/*<Table model={ TableModel } data={ items }></Table>*/}
@@ -68,6 +71,12 @@ const Cart = ({total, items}) => (
           <tr><td colSpan={4}/><td>{ formatPrice(total) }</td></tr>
         </tbody>
       </table>
+
+      : <div>
+          <p>Your cart is empty</p>
+        </div>
+      }
+
     </div>
 );
 
@@ -80,4 +89,4 @@ export default connect((state) => {
       state.cart.items
     ),
   };
-})(Cart);
+},{clear})(Cart);
