@@ -18,7 +18,7 @@ const Item = connect(
 )(({id, quantity, setQuantity, remove}) => {
   const {title, price} = products[id];
   const inc = () => setQuantity({id, quantity: quantity + 1});
-  const dec = () => setQuantity({id, quantity: quantity - 1});
+  const dec = () => { quantity === 1 ? remove(id) : setQuantity({id, quantity: quantity - 1}) };
   return (
     <tr>
       <td>
@@ -30,7 +30,7 @@ const Item = connect(
       </td>
       <td>
         {quantity}
-        <a onClick={inc}><Icon name="fa-plus"></Icon></a> <a onClick={ quantity > 0 ? dec : remove(id) }><Icon name="fa-minus"></Icon></a>
+        <a onClick={ inc }><Icon name="fa-plus"></Icon></a> <a onClick={ dec }><Icon name="fa-minus"></Icon></a>
       </td>
       <td>
         { formatPrice(price * quantity)}
@@ -71,7 +71,7 @@ const Cart = ({total, items, clear}) => (
           </table>
         </div>
       : 
-      <div>
+      <div className={styles.emptyCart}>
           <p>Your cart is empty</p>
       </div>
       }
