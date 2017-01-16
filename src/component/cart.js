@@ -8,6 +8,8 @@ import * as products from '../data/items';
 import Heading from './heading';
 import Icon from './Icon';
 import Table from './table';
+import { formatPrice } from '../utilities';
+
 
 import styles from './styles.css';
 
@@ -22,17 +24,19 @@ const Item = connect(
     <tr>
       <td>
         {title}
+        <Icon name="fa-trash-o" size="fa-1x"></Icon>
       </td>
       <td>
-        {price}
+        { formatPrice(price)}
       </td>
       <td>
         {quantity}
-        <a onClick={inc}>+</a> <a onClick={dec}>-</a>
+        <a onClick={inc}><Icon name="fa-plus"></Icon></a> <a onClick={dec}><Icon name="fa-minus"></Icon></a>
       </td>
       <td>
-        {price * quantity}
+        { formatPrice(price * quantity)}
       </td>
+      <td></td>
     </tr>
   );
 });
@@ -51,15 +55,16 @@ const Cart = ({total, items}) => (
       <table className={styles.productsTable}>
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
+            <th width="25%">Product</th>
+            <th width="20%">Price</th>
+            <th width="20%">Quantity</th>
+            <th width="20%">Total</th>
+            <th width="15%"></th>
           </tr>
         </thead>
         <tbody>
           {map((item) => <Item {...item}/>, items)}
-          <tr><td colSpan={3}/><td>TOTAL: {total}</td></tr>
+          <tr><td colSpan={4}/><td>{ formatPrice(total)}</td></tr>
         </tbody>
       </table>
     </div>
