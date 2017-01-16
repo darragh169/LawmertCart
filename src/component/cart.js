@@ -10,7 +10,6 @@ import Icon from './Icon';
 import Table from './table';
 import { formatPrice } from '../utilities';
 
-
 import styles from './styles.css';
 
 const Item = connect(
@@ -24,14 +23,14 @@ const Item = connect(
     <tr>
       <td>
         {title}
-        <a onClick={() => remove(id)}><Icon onClick={remove} name="fa-trash-o" size="fa-1x"></Icon></a>
+        <a onClick={() => remove(id)}><Icon name="fa-trash-o" size="fa-1x"></Icon></a>
       </td>
       <td>
         { formatPrice(price)}
       </td>
       <td>
         {quantity}
-        <a onClick={inc}><Icon name="fa-plus"></Icon></a> <a onClick={dec}><Icon name="fa-minus"></Icon></a>
+        <a onClick={inc}><Icon name="fa-plus"></Icon></a> <a onClick={ quantity > 0 ? dec : remove(id) }><Icon name="fa-minus"></Icon></a>
       </td>
       <td>
         { formatPrice(price * quantity)}
