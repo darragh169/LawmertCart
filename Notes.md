@@ -5,4 +5,4 @@ I spent too much time trying to figure it out
 * I tried to put Table into its own component but decided against it.
 * I used Font Awesome Icons (but couldn't get the darker trash can to show up)
 * I used Overpass from Googgle fonts
-* I just ran 'npm run test' and I had too many lint errors, I should have been running it all day and now I don't have time to fix
+* I just ran 'npm run test' and I had too many lint errors, I should have been running it all day
